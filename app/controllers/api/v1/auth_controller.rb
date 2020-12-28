@@ -12,6 +12,14 @@ class Api::V1::AuthController < ApplicationController
         render json: { message: 'Invalid username or password' }, status: :unauthorized
       end
     end
+
+    def auto_login
+      if current_user 
+        render json: current user
+      else 
+        render json: {errors: "No user logged in"}
+      end
+    end
   
     private
   

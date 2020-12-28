@@ -1,12 +1,4 @@
 class Api::V1::CountriesController < ApplicationController
-<<<<<<< HEAD
-   
-    def index 
-        @countries = Country.all
-        render json: @countries
-
-    end
-=======
     before_action :set_country, only: [:show, :update]
 
     def index
@@ -43,5 +35,4 @@ class Api::V1::CountriesController < ApplicationController
      }
     end
     
->>>>>>> 0d4bd09a85e73685b743317d6b1b95988f31ead2
 end

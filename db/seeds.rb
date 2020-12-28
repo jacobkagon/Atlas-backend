@@ -6,11 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
-Country.delete_all
-
-Country.create(name: "United States", country_code: "USA")
-Country.create(name: "Ireland", country_code: "IRL")
-=======
 user1 = User.create(username: 'Lionel', password: 'messi', email: 'forza@barca.com')
->>>>>>> 0d4bd09a85e73685b743317d6b1b95988f31ead2
