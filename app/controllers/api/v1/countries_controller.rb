@@ -13,9 +13,15 @@ class Api::V1::CountriesController < ApplicationController
     end
 
     def create
-        @country = Country.create(country_params)
+        @country = Country.new(country_params)
+        if Country.find_by(country_code: params[:country_code])
+          render json: { error: 'failed to create country' }, status: :not_acceptable
+        else
+          @country.save
           render json: @country
+        end
     end
+
 
     private
 
