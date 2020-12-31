@@ -7,6 +7,5 @@ class User < ApplicationRecord
     has_many :countries, through: :favorites
 
     validates :username, presence: true 
-   validates :uniqueness,  {case_sensitive: false}
-   validates :password, presence: true
+    validates :password, presence: true
 end
