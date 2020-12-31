@@ -1,3 +1,3 @@
 class CountrySerializer < ActiveModel::Serializer
-  attributes :id, :name, :country_code
+  attributes :id, :country_code
 end

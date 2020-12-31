@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2020_12_24_160311) do
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string "name"
     t.string "country_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

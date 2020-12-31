@@ -12,6 +12,11 @@ class Api::V1::CountriesController < ApplicationController
         render json: countries.to_json(country_serializer_options)
     end
 
+    def create
+        @country = Country.create(country_params)
+          render json: @country
+    end
+
     private
 
     def set_country
