@@ -1,5 +1,5 @@
 class Api::V1::CountriesController < ApplicationController
-    before_action :set_country, only: [:show, :update]
+    skip_before_action :authorized, only: [:show, :create]
 
     def index
         countries = Country.all
@@ -7,19 +7,20 @@ class Api::V1::CountriesController < ApplicationController
         render json: countries.to_json(country_serializer_options)
     end 
 
-    def show_exceptions
+
+    def show
         country = Country.find(params[:id])
-        render json: countries.to_json(country_serializer_options)
+        render json: country
     end
 
     def create
         @country = Country.new(country_params)
-        # if Country.find_by(country_code: params[:country_code])
-        #   render json: { error: 'failed to create country' }, status: :not_acceptable
-        # else
+     if Country.find_by(country_code: params[:country_code])
+           render json: { error: 'failed to create country' }, status: :not_acceptable
+         else
           @country.save
           render json: @country
-        # end
+         end
     end
 
 

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :create]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
-      resources :countries, only: [:index, :create]
-      resources :favorites, only: [:index, :create]
+      resources :countries, only: [:index, :create, :show]
+      resources :favorites, only: [:index, :show, :create, :destroy]
     end
   end
 end

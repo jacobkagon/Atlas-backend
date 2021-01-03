@@ -6,11 +6,25 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.find(params[:id])
+    render json: @favorite
   end
 
   def create
-    @favorite = Favorite.create(favorite_params)
-    render json: @favorite
+    @favorite = Favorite.new(favorite_params)
+    # if Favorite.find_by(country_id: params[:country:id])
+    #   render json: { error: 'failed to create favorite' }, status: :not_acceptable
+    # else
+      @favorite.save
+      render json: @favorite
+    # end
+   
+
+  end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
   end
 
   private

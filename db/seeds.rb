@@ -15,3 +15,4 @@ country2 = Country.create(country_code: "SEN")
 
 
 favorite1 = Favorite.create(user_id: user1.id, country_id: country1.id)
+favorite2 = Favorite.create(user_id: user1.id, country_id: country2.id)
