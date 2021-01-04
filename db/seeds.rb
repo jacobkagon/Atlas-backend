@@ -16,3 +16,6 @@ country2 = Country.create(country_code: "SEN")
 
 favorite1 = Favorite.create(user_id: user1.id, country_id: country1.id)
 favorite2 = Favorite.create(user_id: user1.id, country_id: country2.id)
+
+review1 = Review.create(body: "I love Spain!", rating: 5, user_id: user1.id, country_id: country1.id)
+review1 = Review.create(body: "I love Senegal!", rating: 5, user_id: user1.id, country_id: country2.id)
