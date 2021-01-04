@@ -23,7 +23,7 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.find_by(user_id: params[:user_id], country_id: params[:country_id])
     @favorite.destroy
   end
 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       resources :countries, only: [:index, :create, :show]
       resources :favorites, only: [:index, :show, :create, :destroy]
+      delete '/favorites/:user_id/:country_id', to: 'favorites#destroy'
     end
   end
 end
