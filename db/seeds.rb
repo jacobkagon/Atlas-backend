@@ -8,6 +8,7 @@
 User.destroy_all
 Country.destroy_all
 Favorite.destroy_all
+Review.destroy_all
 user1 = User.create(username: 'Lionel', password: 'messi', email: 'forza@barca.com')
 
 country1 = Country.create(country_code: "ESP")
