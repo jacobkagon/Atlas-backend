@@ -2,9 +2,9 @@ class Api::V1::CountriesController < ApplicationController
     skip_before_action :authorized, only: [:show, :create]
 
     def index
-        countries = Country.all
+        @countries = Country.all
 
-        render json: countries.to_json(country_serializer_options)
+        render json: @countries
     end 
 
 
@@ -32,19 +32,6 @@ class Api::V1::CountriesController < ApplicationController
 
     def country_params
         params.require(:country).permit(:country_code)
-    end
-
-    def country_serializer_options() { 
-        :include => { 
-            :reviews => { 
-                :except => [:created_at, :update_at]
-             }, 
-            :favorites => { 
-                :except => [:created_at, :update_at]
-             }
-         },
-         :except => [:created_at, :updated_at]
-     }
     end
     
 end
